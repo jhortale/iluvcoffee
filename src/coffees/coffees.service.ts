@@ -8,7 +8,6 @@ import { UpdateCoffeeDto } from './dto/update-coffee.dto';
 import { Coffee } from './entities/coffee.entity';
 import { Flavor } from './entities/flavor.entity';
 import { Event } from '../events/entities/event.entity';
-import coffeesConfig from './config/coffees.config';
 
 @Injectable()
 export class CoffeesService {
@@ -18,11 +17,7 @@ export class CoffeesService {
     @InjectRepository(Flavor)
     private readonly flavorRepository: Repository<Flavor>,
     private readonly connection: Connection,
-    @Inject(coffeesConfig.KEY)
-  private coffeesConfiguration: ConfigType<typeof coffeesConfig>, 
-    
   ) {
-    console.log(coffeesConfiguration.foo); 
   }
 
   findAll(paginationQuery: PaginationQueryDto) {

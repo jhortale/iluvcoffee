@@ -19,7 +19,7 @@ async function bootstrap() {
 
   app.useGlobalInterceptors(
     new WrapResponseInterceptor(), 
-    new TimeoutInterceptor(), // 👈
+    new TimeoutInterceptor(),
   );
 
   app.useGlobalFilters(new HttpExceptionFilter())
